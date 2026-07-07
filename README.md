@@ -94,7 +94,7 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
     Smartphone: DHCP
     Laptop: DHCP
 
-## Github Struecture
+## Github File Structure
 
     ├── diagrams
     ├── docs
