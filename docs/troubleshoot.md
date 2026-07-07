@@ -33,3 +33,15 @@ Edit: That fixed my problem, I am able to log in now.
         - creating the persistent bridge: sudo nmcli conn add type bridge con-name br-lan ifname br-lan
         - binding the physical ethernet interface to the bridge as a slave: sudo nmcli conn add type ethernet con-name br-lan-slave ifname eno1 master br-lan
         - enabling the bridge connection: sudo nmcli conn up br-lan
+        
+2026/07/07
+    - Management VM had trouble pinging pfsense, fixed that by deleting multiple "br-lan' entries in nmtui and remvoving br-lan files stored in "/etc/NetworkManager/system-connections"
+    - Couldn't access the internet on management vm even though pfsense could ping "8.8.8.8" succefully. management vm could also ping "8.8.8.8" but could not do the same for "google.com". DNS problem.
+        - find name of connection: nmcli connection show
+        - adding dns: nmcli connection modify "connection name" ipv4.dns "pfsense ip"
+        - "nmcli connection up "connection name"
+        
+        - command block:
+            'sudo nmcli connection show;
+             sudo nmcli connection modify "connection name" ipv4.dns "pfsense ip";
+             sudo nmcli connection up "connection name"
