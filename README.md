@@ -1,9 +1,11 @@
 # homelab-active-directory-environment
 
 ## Overview
+
 This repository documents a self-hosted enterprise homelab built to simulate a small business network.
 
 ## Objectives
+
 - Deploy Active Directory
 - Deploy a ticketing system
 - Configure DNS and DHCP
@@ -25,6 +27,20 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
 - Windows Server 2019
 - Debian, Ubuntu Linux
 - Active Directory
+
+## Project Progress
+
+- [x] Install pfSense
+- [x] Configure VLANs
+- [x] Install Proxmox
+- [] Install Windows Server
+- [] Promote Domain Controller
+- [] Create Active Directory users
+- [] Configure Group Policy
+- [] Deploy Wireguard
+- [] Install Pi-hole
+- []
+- []
 
 ## Hardware
 
@@ -77,6 +93,26 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
 ### Guest
     Smartphone: DHCP
     Laptop: DHCP
+
+## Github Struecture
+
+    ├── diagrams
+    ├── docs
+    │   ├── 01-network-design.md
+    │   ├── 02-pfsense-setup.md
+    │   ├── 03-proxmox-installation.md
+    │   ├── 04-active-directory.md
+    │   ├── 05-pihole.md
+    │   ├── 06-wireguard-vpn.md
+    │   ├── 07-ticket-system.md
+    │   └── troubleshoot.md
+    ├── README.md
+    ├── screenshots
+    └── scripts
+        ├── bash
+        ├── powershell
+        └── python
+
 
 ## Network Diagram
     **
