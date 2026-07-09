@@ -20,7 +20,7 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
 
 This diagram shows the phhysical and virtual design of the homelab environment, including the pfSense firewall, Proxmox host, VLAN segmentation, and virtual machines
 
-![Network Architecture](doc/images/network-architecture.png)
+![Network Architecture](docs/images/network-architecture.png)
 
 
 ## Hardware
