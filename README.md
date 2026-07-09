@@ -16,31 +16,12 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
 - Configure remote VPN access
 - Simulate real world enterprise administration
 
-## Technologies
-- Proxmox VE
-- KVM/QEMU
-- pfSense
-- DNS
-- DHCP
-- Pi-hole
-- WireGuard
-- Windows Server 2019
-- Debian, Ubuntu Linux
-- Active Directory
+# Network Architecture
 
-## Project Progress
+This diagram shows the phhysical and virtual design of the homelab environment, including the pfSense firewall, Proxmox host, VLAN segmentation, and virtual machines
 
-- [x] Install pfSense
-- [x] Configure VLANs
-- [x] Install Proxmox
-- [] Install Windows Server
-- [] Promote Domain Controller
-- [] Create Active Directory users
-- [] Configure Group Policy
-- [] Deploy Wireguard
-- [] Install Pi-hole
-- []
-- []
+![Network Architecture](doc/images/network-architecture.png)
+
 
 ## Hardware
 
@@ -114,8 +95,17 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
         └── python
 
 
-## Network Diagram
-    **
+## Technologies used
+- Proxmox VE
+- KVM/QEMU
+- pfSense
+- DNS
+- DHCP
+- Pi-hole
+- WireGuard
+- Windows Server 2019
+- Debian, Ubuntu Linux
+- Active Directory
 
 ## Installed Packages
 - **N/A:** 
@@ -123,4 +113,16 @@ This repository documents a self-hosted enterprise homelab built to simulate a s
 ## Configuration Notes
 - **Firewall Rules:** Blocked """""" VLAN from accessing LAN and pfSense WebGUI.
 - **DHCP:** Pools configured for all VLANs with static mappings for servers.
+
+## Project Progress
+
+- [x] Install pfSense
+- [x] Configure VLANs
+- [x] Install Proxmox
+- [] Install Windows Server
+- [] Promote Domain Controller
+- [] Create Active Directory users
+- [] Configure Group Policy
+- [] Deploy Wireguard
+- [] Install Pi-hole
 
