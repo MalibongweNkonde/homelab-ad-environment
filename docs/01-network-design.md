@@ -36,12 +36,12 @@ The  goal of this phase was to design a scalable network that would support an e
 
 | VLAN | Name | Subnet | Purpose |
 | :--- | :--- | :--- | :--- |
-| 1 | Management | 10.0.0.0/24 | Manage Devices |
-| 20 | Servers | 10.0.20.0/24 | Active Directory and infrastructure services |
-| 30 | Workstations | 10.0.30.0/24 | Windows Client Machines |
-| 40 | Linux | 10.0.40.0/24 | Linux  | Ubuntu and Monitoring Server |
+| 1 | Management | 10.0.0.0/24 | Proxmox and infrastructure management |
+| 20 | Servers | 10.0.20.0/24 | Active Directory and server workloads |
+| 30 | Workstations | 10.0.30.0/24 | Windows client machines |
+| 40 | Linux | 10.0.40.0/24 | Linux services |
 | 50 | DMZ | 10.0.0.50/24 | Public facing services |
-| 60 | Guest | 10.0.60.0/24 |  Guest Devices |
+| 60 | Guest | 10.0.60.0/24 |  Isolated guest network |
 
 ## IP Addressing
 | Device| IP Address|
