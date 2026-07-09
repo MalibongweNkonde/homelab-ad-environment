@@ -73,8 +73,7 @@ Wifi &rarr; Linux Host Operating System &rarr; pfSense WAN &rarr; pfSense LAN &r
 | :--- | :--- | :--- | :--- |
 |Bridge on M6800 host OS| Bridge would dissapear on every restart| Removed the duplicate entries of bridge from nmtui. <br> Removed existing bridges stored in 'cd /etc/NetworkManager/system-connections/'.<br> Created new permanent bridge using nmcli.| nmtui does not create a permanent brdige. <br> Clear old bridge configuration to avoid potential conflict.|
 |DNS| Management PC could not connect to internet but could ping 8.8.8.8 and pfSense|I ran commands:<br> 'sudo nmcli connection show'<br> 'sudo nmcli connection modify "connection name" ipv4.dns "pfsense ip"'<br> 'sudo nmcli connection up "connection name"' <br> to set the DNS server to pfSense| It is always DNS|
-|||||
-|||||
+
 
 ## Skills Demonstrated 
 
