@@ -28,7 +28,7 @@ Responsibilities:
 Internet &rarr; Huawei Mobile Router &rarr; USB Tethering &rarr; Dell M6800 &rarr; pfsSense &rarr; LAN bridge &rarr; Proxmox bridge &rarr; Proxmox Server &rarr; Virtual Machines
 
 - Dashboard: 
-![Dashboard](docs/images/pfsense/pfsense-dashboard.png)
+![Dashboard](images/pfsense/pfsense-dashboard.png)
 
 # Virtual Machine Configuration
 
@@ -76,19 +76,19 @@ CPU: 2 cores
 Screenshots:
 
 - ISO:
- ![ISO selection](docs/images/pfsense/pfsense-iso.png)
+ ![ISO selection](images/pfsense/pfsense-iso.png)
  Link for exact pfSense version was found here: [pfSense](https://archive.org/details/pfsense-ce-2.7.2-release-amd64_202507)
  
 - RAM and CPU allocation:
-![CPU](docs/images/pfsense/pfsense-cpu-allocation.png)
-![RAM](docs/images/pfsense/pfsense-ram-allocation.png)
+![CPU](images/pfsense/pfsense-cpu-allocation.png)
+![RAM](images/pfsense/pfsense-ram-allocation.png)
 
 - Network adapters:
-![LAN](docs/images/pfsense/pfsense-lan.png)
-![WAN](docs/images/pfsense/pfsense-wan.png)
+![LAN](images/pfsense/pfsense-lan-bridge.png)
+![WAN](images/pfsense/pfsense-wan.png)
 
-- Overview 
-![Overview](docs/images/pfsense/pfsense-overview.png)
+- Overview: 
+![Overview](images/pfsense/pfsense-overview.png)
 
 ## Step 2 - Install pfSense
 
@@ -174,7 +174,7 @@ Successful DNS resolution
 | Guest | VLAN 60 | 10.0.60.1 |
 
 - Interface Assignment: 
-![Interface Assignment](docs/images/pfsense/pfsense-overview.png)
+![Interface Assignment](images/pfsense/pfsense-interface-assignments.png)
 
 # Problems Encountered
 
