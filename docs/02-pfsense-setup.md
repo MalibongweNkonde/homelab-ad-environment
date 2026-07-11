@@ -23,12 +23,13 @@ Responsibilities:
 | WAN Interface | WiFi|
 | LAN Interface| Ethernet bridge directly to desktop computer|
 
+### Dashboard: 
+![Dashboard](images/pfsense/pfsense-dashboard.png)
+
+
 # Network Topology
 
 Internet &rarr; Huawei Mobile Router &rarr; USB Tethering &rarr; Dell M6800 &rarr; pfsSense &rarr; LAN bridge &rarr; Proxmox bridge &rarr; Proxmox Server &rarr; Virtual Machines
-
-- Dashboard: 
-![Dashboard](images/pfsense/pfsense-dashboard.png)
 
 # Virtual Machine Configuration
 
@@ -37,7 +38,7 @@ Internet &rarr; Huawei Mobile Router &rarr; USB Tethering &rarr; Dell M6800 &rar
 | Resource | Allocation|
 | :--- | :--- |
 | CPU | 2 cores |
-| RAM| |
+| RAM| 2048MB |
 | Storage | 20GB |
 | Network Adapters| 2 |
 
@@ -48,9 +49,9 @@ Purpose:
 
 Configuration:
 
-Interface: WAN
-Network: Host Wifi bridge
-IP Assignment: DHCP
+    Interface: WAN
+    Network: Host Wifi bridge
+    IP Assignment: DHCP
 
 ### LAN Interface
 
@@ -59,25 +60,25 @@ Purpose:
 
 Configuration:
 
-Interface: br-lan
-IP Address: 10.0.0.1/24
-DHCP Range: ****** 
+    Interface: br-lan
+    IP Address: 10.0.0.1
+    DHCP Range: xxxxxxxxxx 
 
 # Installation process
 
 ## Step 1 - Create Virtual Machine
 
-VM Name: pfSense
-Firmware: BIOS 
-Disk: 20GB
-RAM 2048MB
-CPU: 2 cores
+    VM Name: pfSense
+    Firmware: BIOS 
+    Disk: 20GB
+    RAM 2048MB
+    CPU: 2 cores
 
 Screenshots:
 
 - ISO:
+Link for exact pfSense version was found here: [pfSense](https://archive.org/details/pfsense-ce-2.7.2-release-amd64_202507)
  ![ISO selection](images/pfsense/pfsense-iso.png)
- Link for exact pfSense version was found here: [pfSense](https://archive.org/details/pfsense-ce-2.7.2-release-amd64_202507)
  
 - RAM and CPU allocation:
 ![CPU](images/pfsense/pfsense-cpu-allocation.png)
@@ -94,10 +95,10 @@ Screenshots:
 
 Installation steps:
 
-1. Boot from pfSense ISO (Change boot order if necesarry)
-2. Accept license agreement
-3. Select Install option
-4. Choose filesystem
+1. Boot from pfSense ISO. (Change boot order if necesarry)
+2. Accept license agreement.
+3. Select install option.
+4. Choose filesystem.
 5. Reboot after installation.
 
 ## Step 3: Interface assignment after installion:
@@ -106,13 +107,14 @@ It should automatically assign the interfaces but if it did not or you want to c
 
 Default:
 
-WAN: em0
-LAN: vtnet0
+    WAN: em0
+    LAN: vtnet0
 
 I changed the IP Address on the LAN interface to:
-IP Address: 10.0.0.1
-Subnet: 255.255.255.0/24
-DHCP: Enabled
+
+    IP Address: 10.0.0.1
+    Subnet: 255.255.255.0/24
+    DHCP: Enabled
 
 This LAN subnet provides connectivity between:
 - pfSense
@@ -130,34 +132,37 @@ This LAN subnet provides connectivity between:
 | - | - | - |
 | LAN | Allow LAN to Any | Internet users can access internet|
 | WAN | Block unsolicited traffic | Protect internal network|
+
 {Insert Screenshot}
 
 # DHCP Configuration
 
-Range: 10.0.0.10 - 10.0.0.100
-Gateway: 10.0.0.1
-DNS: 10.0.0.1
+    Range: 10.0.0.30 - 10.0.0.100
+    Gateway: 10.0.0.1
+    DNS: 10.0.0.1
 
 # Testing
-
 ## Connectivity Tests
-
 ### pfSense Internet Test
 
 Testing Diagnostics &rarr; Ping
-Target: 8.8.8.8
+
+    Target: 8.8.8.8
 
 {Insert Screeshot}
 
 ### LAN Device Test 
 
 From Manangement VM:
-'ping 10.0.0.1'
+    
+    ping 10.0.0.1
 
-Internet test
-'ping google.com'
+Internet test:
+
+    ping google.com
 
 Successful DNS resolution
+
 {Insert Screenshot}
 
 # VLAN Configuration
