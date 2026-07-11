@@ -32,7 +32,7 @@ The  goal of this phase was to design a scalable network that would support an e
 | Manangement VM | Administration workstation for devices on LAN|
 | Proxmox Host | Hypervisor for Active Directory and related services |
 
-## Network Topolgy
+## VLAN Design
 
 | VLAN | Name | Subnet | Purpose |
 | :--- | :--- | :--- | :--- |
